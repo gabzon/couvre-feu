@@ -1,0 +1,26 @@
+.fancybox-container {
+	.fancybox-navigation {
+
+
+		.fancybox-arrow {
+		    top: 0%;
+		    margin: -50px 0 0;
+		    height: 400px;
+		    width: 400px;
+		    padding: 100px 50px;
+		    outline: none;
+		    background: none;
+		    z-index: 99995;
+		    opacity: 0;
+		    transition: opacity .25s;
+			outline: 1px solid red;
+		}
+
+		.fancybox-arrow--right{
+			cursor: url('../images/arrow-right.png'), auto;
+		}
+		.fancybox-arrow--left{
+			cursor: url('../images/arrow-left.png'), auto;
+		}
+	}
+}
