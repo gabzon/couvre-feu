@@ -1,6 +1,8 @@
+### 4: July 1st, 2017
+* Legend capable of multiple lines added
+
 ### 3: July 1st, 2017
-*
-* fancy box
+* Fancybox added
 
 ### 4: July 2nd, 2017
 * Migration to gandhi

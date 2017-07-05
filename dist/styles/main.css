@@ -14339,6 +14339,65 @@ iframe {
   border: 0;
 }
 
+.last-year {
+  background-color: black;
+  color: white;
+  -webkit-animation-name: example;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  -o-animation-name: example;
+     animation-name: example;
+  -o-animation-duration: 1s;
+     animation-duration: 1s;
+}
+
+#search-input.change-color::-webkit-input-placeholder {
+  color: white;
+}
+
+#search-input.change-color:-ms-input-placeholder {
+  color: white;
+}
+
+#search-input.change-color::placeholder {
+  color: white;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes example {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
+/* Standard syntax */
+
+@-o-keyframes example {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes example {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
 .comment-list ol {
   list-style: none;
 }
@@ -14347,12 +14406,31 @@ iframe {
   font-weight: normal;
 }
 
+.fancybox-container .fancybox-infobar__body {
+  background: transparent;
+}
+
+.fancybox-container .fancybox-button {
+  background: transparent !important;
+  color: black;
+}
+
+.fancybox-container .fancybox-button:hover {
+  background: transparent !important;
+  color: white;
+}
+
+.fancybox-container .fancybox-button--left,
+.fancybox-container .fancybox-button--right {
+  color: transparent;
+}
+
 .fancybox-container .fancybox-navigation .fancybox-arrow {
-  top: 0%;
+  top: 15%;
   margin: -50px 0 0;
-  height: 400px;
-  width: 400px;
-  padding: 100px 50px;
+  height: 85%;
+  width: 25%;
+  padding: 0;
   outline: none;
   background: none;
   z-index: 99995;
@@ -14360,15 +14438,16 @@ iframe {
   -webkit-transition: opacity .25s;
   -o-transition: opacity .25s;
   transition: opacity .25s;
-  outline: 1px solid red;
 }
 
 .fancybox-container .fancybox-navigation .fancybox-arrow--right {
   cursor: url(../images/arrow-right.png), auto;
+  right: 10%;
 }
 
 .fancybox-container .fancybox-navigation .fancybox-arrow--left {
   cursor: url(../images/arrow-left.png), auto;
+  left: 10%;
 }
 
 .alignnone {

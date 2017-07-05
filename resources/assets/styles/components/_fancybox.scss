@@ -1,26 +1,30 @@
 .fancybox-container {
+	.fancybox-infobar__body{ background: transparent; }
+	.fancybox-button{ background: transparent !important; color: black;}
+	.fancybox-button:hover { background: transparent !important; color: white;}
+	.fancybox-button--left, .fancybox-button--right { color: transparent; }
 	.fancybox-navigation {
-
-
 		.fancybox-arrow {
-		    top: 0%;
+		    top: 15%;
 		    margin: -50px 0 0;
-		    height: 400px;
-		    width: 400px;
-		    padding: 100px 50px;
+		    height: 85%;
+		    width: 25%;
+		    padding: 0;
 		    outline: none;
 		    background: none;
 		    z-index: 99995;
 		    opacity: 0;
 		    transition: opacity .25s;
-			outline: 1px solid red;
+			//outline: 1px solid red;
 		}
 
 		.fancybox-arrow--right{
 			cursor: url('../images/arrow-right.png'), auto;
+			right: 10%;
 		}
 		.fancybox-arrow--left{
 			cursor: url('../images/arrow-left.png'), auto;
+			left: 10%;
 		}
 	}
 }

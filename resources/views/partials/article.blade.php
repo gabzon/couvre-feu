@@ -7,9 +7,9 @@
 
 @if (get_post_format( $p->ID ) === 'image')
 	<div data-title="{{ $legend }}" class="pt-1 cf-article cf-image" data-label="{{ $search_tags }}" style="{{ display_styles(get_the_ID()) }} overflow:scroll">
-		<a href="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" data-fancybox>
+		{{-- <a href="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" data-fancybox>
 			<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
-		</a>
+		</a> --}}
 		@php(the_content())
 	</div>
 @elseif ( get_post_format( get_the_ID() ) === 'gallery' )
@@ -25,7 +25,7 @@
 
 				@foreach ( $ids as $id )
 					<a href="{{ wp_get_attachment_image_url($id, 'full') }}" data-fancybox="images-preview-{{ the_ID() }}">
-						<img src="{{ wp_get_attachment_image_url($id) }}" class="my-custom-class" alt="Gallery image" />
+						<img src="{{ wp_get_attachment_image_url($id, 'full') }}" class="img-fluid" alt="Gallery image" />
 					</a>
 				@endforeach
 			@endif
@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
 	$('.cf-image').hover(
 		function(){
 			var title = $(this).attr("data-title");
-			title = '<div style="align-selfgit init:flex-end;">' + title + '</div>';
+			title = '<div style="align-self:flex-end;">' + title + '</div>';
 			$(".footer-panel").css({
 				"display"			: "flex",
 				"justify-content"	: "center"
