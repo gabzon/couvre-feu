@@ -30,7 +30,7 @@ Template Name: Front page
 				@if ( $current_year < $year )
 
 					@if ($year_block_state === 'start')
-						<div class="year-block mt-4 {{ $current_year_color }} {{$year}}">
+						<div class="year-block mt-4 {{ $current_year_color }} {{$year}}" style="display:flex; flex-wrap:wrap; align-items: center;">
 							<div class="text-right sticky-top pt-5" style="z-index:1">
 								<h5 class="couvrefeu-text" style="position:absolute; right:5px; top:20px; width: 30px;">{{ $year }}</h5>
 							</div>
