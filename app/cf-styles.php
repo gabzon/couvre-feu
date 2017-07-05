@@ -16,10 +16,10 @@ function display_styles($id){
     ** Width & Heigh Section
     ************************************************************************* */
     if (get_post_meta($id,'width', true)) {
-        $width = 'width: ' . get_post_meta($id,'width', true)  . '; ';
+        $width = 'max-width: ' . get_post_meta($id,'width', true)  . '; ';
     }
     if (get_post_meta($id,'height', true)) {
-        $height = 'height: ' . get_post_meta($id,'height', true)  . '; ';
+        $height = 'max-height: ' . get_post_meta($id,'height', true)  . '; ';
     }
 		if (get_post_meta($id,'cf_fullwidth', true) === 'true') {
 				$block = 'display: block;';

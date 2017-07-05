@@ -80,30 +80,33 @@ Template Name: Front page
 					$(".articles div.cf-article").show();
 				}
 			});
+
+			//https://www.w3schools.com/css/css3_animations.asp
+			var currentTime = new Date();
+			var year 		= currentTime.getFullYear()
+			var distance 	= jQuery('.' + year).offset().top;
+			var $window 	= jQuery(window);
+
+			$window.scroll(function() {
+				if ( $window.scrollTop() >= distance ) {
+					console.log(distance);
+					jQuery('.2017').addClass('last-year');
+					jQuery('.footer-text').css('color',"white");
+					jQuery('.text-header').css('color',"white");
+					jQuery('.form-inline').css('color',"white");
+					jQuery('input#search-input').addClass('change-color');
+					jQuery('#search-input').css('border-bottom',"1px solid white");
+				}else {
+					jQuery('.2017').removeClass('last-year');
+					jQuery('.footer-text').css('color',"black");
+					jQuery('.text-header').css('color',"black");
+					jQuery('.form-inline').css('color',"black");
+					jQuery('#search-input').css('border-bottom',"1px solid black");
+					jQuery('input#search-input').removeClass('change-color');
+				}
+			});
 		});
 
-		//https://www.w3schools.com/css/css3_animations.asp
-		var currentTime = new Date();
-		var year 		= currentTime.getFullYear()
-		var distance 	= jQuery('.' + year).offset().top;
-		var $window 	= jQuery(window);
 
-		$window.scroll(function() {
-			if ( $window.scrollTop() >= distance ) {
-				jQuery('.2017').addClass('last-year');
-				jQuery('.footer-text').css('color',"white");
-				jQuery('.text-header').css('color',"white");
-				jQuery('.form-inline').css('color',"white");
-				jQuery('input#search-input').addClass('change-color');
-				jQuery('#search-input').css('border-bottom',"1px solid white");
-			}else {
-				jQuery('.2017').removeClass('last-year');
-				jQuery('.footer-text').css('color',"black");
-				jQuery('.text-header').css('color',"black");
-				jQuery('.form-inline').css('color',"black");
-				jQuery('#search-input').css('border-bottom',"1px solid black");
-				jQuery('input#search-input').removeClass('change-color');
-			}
-		});
 		</script>
 	@endsection

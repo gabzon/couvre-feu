@@ -15,7 +15,7 @@
 @elseif ( get_post_format( get_the_ID() ) === 'gallery' )
 	<div data-title="{{ $legend }}" class="pt-1 cf-article cf-image" data-label="{{ $search_tags }}" style="{{ display_styles(get_the_ID()) }} overflow:scroll">
 		<a href="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" data-fancybox="images-preview-{{the_ID()}}">
-			<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'thumbnail') }}" alt="" class="img-fluid">
+			<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
 		</a>
 
 		<div style="display: none;">
