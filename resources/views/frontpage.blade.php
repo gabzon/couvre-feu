@@ -58,6 +58,7 @@ Template Name: Front page
 		<script type="text/javascript">
 		// http://mobifreaks.com/coding/html5-data-attributes-search-using-jquery
 		jQuery(document).ready(function() {
+
 			$('#search-input').on( "keyup", function() {
 				// get the value from text field
 				var input = $(this).val();
@@ -65,8 +66,13 @@ Template Name: Front page
 				// by default every list element will be shown
 				$(".articles div.cf-article").show();
 				// Non related element will be hidden after input
-				$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").hide();
-				//$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").parent().css('color','red');
+				//$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").hide();
+				$(".articles div.cf-article").not("[data-label*=\""+ input.toLowerCase() +"\"]").hide();
+
+
+				//hide years without visible articles
+				$('.year-block').show();
+				$('.year-block:not(:has(.cf-article:visible))').hide();
 
 				// For Search Variable, total number of lists and number of matched elements
 				var total = $(".articles div.cf-article").length;
@@ -74,6 +80,7 @@ Template Name: Front page
 
 				if(input.length > 0){
 					$('.input').show();
+					//$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").parent().css('display','none');
 					$('.input').html('Searched for "' + input + '" (' + matched + ' Matched out of ' + total + ' )');
 				} else {
 					$('.input').hide();

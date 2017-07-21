@@ -37,3 +37,8 @@ iframe{
     from {background-color: white;}
     to {background-color: black;}
 }
+
+// https://css-tricks.com/snippets/css/hide-scrollbar-in-edge-ie-1011/
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
