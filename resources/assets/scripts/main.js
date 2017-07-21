@@ -2,6 +2,7 @@
 import 'jquery';
 import 'bootstrap';
 import 'fancybox/dist/js/jquery.fancybox.js';
+import 'sticky-kit/dist/sticky-kit.js';
 
 /** import local dependencies */
 import Router from './util/Router';
