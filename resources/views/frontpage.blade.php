@@ -114,6 +114,5 @@ Template Name: Front page
 			});
 		});
 
-
 		</script>
 	@endsection
