@@ -6,4 +6,12 @@ bower_components
 node_modules
 npm-debug.log
 yarn-error.log
+yarn.lock
+
+.editorconfig
+.eslintrc
+.gitattributes
+.stylelintrc
+.travis.yml
+
 # vendor
