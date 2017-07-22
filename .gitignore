@@ -13,5 +13,10 @@ yarn.lock
 .gitattributes
 .stylelintrc
 .travis.yml
+.github
+
+LICENSE.md
+composer.json
+composer.lock
 
 # vendor
