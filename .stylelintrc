@@ -1,8 +1,0 @@
-{
-  "extends": "stylelint-config-standard",
-  "legacyNumberedSeverities": false,
-  "rules": {
-      "indentation": 2,
-      "max-empty-lines": 4,
-  }
-}
