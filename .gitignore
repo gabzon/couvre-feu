@@ -7,11 +7,3 @@ node_modules
 npm-debug.log
 yarn-error.log
 # vendor
-
-
-
-yarn.lock
-vendor
-.editorconfig
-.eslintrc
-.stylelintrc
