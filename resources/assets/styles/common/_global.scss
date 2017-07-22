@@ -1,0 +1,44 @@
+// Base styles
+.uppercase{ text-transform: uppercase; }
+
+body, h1, h2, h3, h4, h5, h6{
+    font-family: 'SuisseIntl';
+}
+
+.current-year{
+    background-color: #00594E;
+}
+
+iframe{
+	border: 0;
+}
+
+.last-year {
+    background-color: black;
+	color: white;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+#search-input.change-color::placeholder{
+	color:white;
+};
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    from {background-color: white;}
+    to {background-color: black;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color: white;}
+    to {background-color: black;}
+}
+
+// https://css-tricks.com/snippets/css/hide-scrollbar-in-edge-ie-1011/
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
