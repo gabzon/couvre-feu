@@ -75,7 +75,15 @@ module.exports = jQuery;
 
 /***/ }),
 
-/***/ 1:
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+
+/***/ }),
+
+/***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -87,14 +95,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 wp.customize('blogname', function (value) {
   value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.brand').text(to); });
 });
-
-
-/***/ }),
-
-/***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(1);
 
 
 /***/ })

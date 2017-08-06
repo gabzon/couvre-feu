@@ -1,12 +1,8 @@
-<span id="website-title">
-	<a class="text-header couvrefeu-text" href="{{ home_url('/') }}" style="transform:rotate(90deg); position:fixed; top:100px; left:-72px;">
-		{{ get_bloginfo('name', 'display') }}
-	</a>
-</span>
-
+@php($style = 'position:fixed; z-index:3; line-height:28px;')
 @php( $text_arabe = 'أكتوبر في باريس' )
-<span id="website-footer">
-    <a class="footer-text couvrefeu-text" style="position:fixed; bottom: 120px; left:-57px; font-size:28px; color:black;" href="{{ home_url('/') }}">
-			{{ $text_arabe }}
-		</a>
-</span>
+
+<a href="#" class="side-text" id="title-top" style="{{$style}} left: -53px; top:110px;">
+	{{ get_bloginfo('name', 'display') }}
+</a>
+
+<a href="#" class="side-text" id="title-bottom" style="{{$style}} left:-42px; bottom:100px;">{{ $text_arabe }}</a>

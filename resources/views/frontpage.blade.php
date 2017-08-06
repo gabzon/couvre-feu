@@ -28,20 +28,16 @@ Template Name: Front page
 				@php( $year = get_post_meta(get_the_ID(),'article_year', true ) )
 
 				@if ( $current_year < $year )
-
+					{{-- display:flex; flex-wrap:wrap; align-items: center; --}}
 					@if ($year_block_state === 'start')
-						<div class="year-block mt-4 {{ $current_year_color }} {{$year}}" style="display:flex; flex-wrap:wrap; align-items: center;">
-							<div class="text-right sticky-top pt-5" style="z-index:1">
-								<h5 class="couvrefeu-text" style="position:absolute; right:5px; top:20px; width: 30px;">{{ $year }}</h5>
-							</div>
+						<div class="year-block mt-4 {{ $current_year_color }} {{$year}}" style="display:block;">
+							@include( 'partials.sticky_year' )
 							@include('partials.article')
 							@php( $year_block_state = 'inside' )
 						@else
 						</div>
-						<div class="year-block mt-4 {{$current_year_color}} {{$year}}">
-							<div class="text-right sticky-top pt-5" style="z-index:1">
-								<h5 class="couvrefeu-text" style="position:absolute; right:5px; top:20px; width: 30px;">{{ $year }}</h5>
-							</div>
+						<div class="year-block mt-4 {{$current_year_color}} {{$year}}" style="display:block;">
+							@include( 'partials.sticky_year' )
 							@include('partials.article')
 						@endif
 						@php( $current_year = $year )
@@ -55,28 +51,47 @@ Template Name: Front page
 			// Pas d'articles trouvé
 		@endif
 
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content" style="color:white">
+				<span class="modal-close">&times;</span>
+				@include('partials.events')
+			</div>
+
+		</div>
+		<br>
+
 		<script type="text/javascript">
 		// http://mobifreaks.com/coding/html5-data-attributes-search-using-jquery
 		jQuery(document).ready(function() {
 
 			$('#search-input').on( "keyup", function() {
+				var arabic = /[\u0600-\u06FF]/;
 				// get the value from text field
-				var input = $(this).val();
+				var input = $(this).val().trim().toLowerCase();
+
+				if (arabic.test(input)) {
+					$('#search-input').css('text-align','right');
+				}else {
+					$('#search-input').css('text-align','left');
+				}
+
 				// check wheather the matching element exists
 				// by default every list element will be shown
 				$(".articles div.cf-article").show();
 				// Non related element will be hidden after input
 				//$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").hide();
-				$(".articles div.cf-article").not("[data-label*=\""+ input.toLowerCase() +"\"]").hide();
-
+				$(".articles div.cf-article").not("[data-label*=\""+ input +"\"]").hide();
 
 				//hide years without visible articles
 				$('.year-block').show();
-				$('.year-block:not(:has(.cf-article:visible))').hide();
+				input && $('.year-block:not(:has(.cf-article:visible))').hide();
 
 				// For Search Variable, total number of lists and number of matched elements
 				var total = $(".articles div.cf-article").length;
-				var matched = $(".articles div.cf-article[data-label*="+ input +"]").length;
+				var matched = $(".articles div.cf-article[data-label*=\""+ input +"\"]").length;
 
 				if(input.length > 0){
 					$('.input').show();
@@ -88,30 +103,35 @@ Template Name: Front page
 				}
 			});
 
+			$('.know-more').click(function(){
+				$('.know-more').css('display','none');
+			})
+
 			//https://www.w3schools.com/css/css3_animations.asp
 			var currentTime = new Date();
-			var year 		= currentTime.getFullYear()
-			var distance 	= jQuery('.' + year).offset().top;
-			var $window 	= jQuery(window);
+			var year = currentTime.getFullYear()
+			var distance = jQuery('.' + year).offset().top;
+			var $window = jQuery(window);
 
 			$window.scroll(function() {
 				if ( $window.scrollTop() >= distance ) {
 					console.log(distance);
 					jQuery('.2017').addClass('last-year');
-					jQuery('.footer-text').css('color',"white");
-					jQuery('.text-header').css('color',"white");
+					jQuery('#title-bottom').css('color',"white");
+					jQuery('#title-top').css('color',"white");
 					jQuery('.form-inline').css('color',"white");
 					jQuery('input#search-input').addClass('change-color');
 					jQuery('#search-input').css('border-bottom',"1px solid white");
 				}else {
 					jQuery('.2017').removeClass('last-year');
-					jQuery('.footer-text').css('color',"black");
-					jQuery('.text-header').css('color',"black");
+					jQuery('#title-bottom').css('color',"black");
+					jQuery('#title-top').css('color',"black");
 					jQuery('.form-inline').css('color',"black");
 					jQuery('#search-input').css('border-bottom',"1px solid black");
 					jQuery('input#search-input').removeClass('change-color');
 				}
 			});
+
 		});
 
 		</script>

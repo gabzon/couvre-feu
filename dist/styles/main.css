@@ -32,13 +32,6 @@
   font-style: normal;
 }
 
-.couvrefeu-text {
-  -webkit-transform: rotate(90deg);
-       -o-transform: rotate(90deg);
-          transform: rotate(90deg);
-  font-size: 28px;
-}
-
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -14400,6 +14393,60 @@ iframe {
 
 html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  -moz-overflow-style: -moz-autohiding-scrollbar;
+}
+
+.couvrefeu-text {
+  -webkit-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 28px;
+}
+
+a.side-text {
+  color: black;
+  font-size: 28px;
+  -webkit-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+  vertical-align: baseline;
+}
+
+a.side-text:hover {
+  text-decoration: none;
+}
+
+a.know-more {
+  color: black;
+  font-size: 1.75rem;
+}
+
+a.know-more:hover {
+  text-decoration: none;
+}
+
+.cf-font-big {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.cf-font-small {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.cf-white {
+  color: white;
+}
+
+a.cf-event-title {
+  text-decoration: none;
+  color: white;
+}
+
+a.cf-event-title:hover {
+  text-decoration: none;
+  color: #8dcdff;
 }
 
 .comment-list ol {
@@ -14454,6 +14501,56 @@ html {
   left: 10%;
 }
 
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  background-color: black;
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  color: white;
+  background: black;
+  margin: 5% auto;
+  padding: 10px;
+  width: 90%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+
+.modal-close {
+  color: white;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .alignnone {
   margin-left: 0;
   margin-right: 0;
@@ -14483,19 +14580,6 @@ html {
     float: right;
     margin-left: 0.5rem;
   }
-}
-
-.text-header {
-  color: black;
-  font-size: 28px;
-  -webkit-transform: rotate(90deg);
-       -o-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-a.text-header:hover {
-  text-decoration: none;
-  color: black;
 }
 
 input#search-input {

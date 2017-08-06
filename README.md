@@ -4,10 +4,31 @@ Made with Sage is a WordPress starter theme with a modern development workflow.
 
 ## CHANGELOG
 
-### 4: July 1st, 2017
+### 9: August 1st, 2017
+* Width scroll bug fixed
+* Event custom post type created
+* Modal event window created
+* List of french events added
+* List of english events added
+* List of arabic events added
+* Event title with collapsable description added
+
+### 8: August 1st, 2017
+* Integration of english legend
+* favicon
+
+### 7: July 25th, 2017
+* Font family for content text added
+* Font size for content text added
+* Font color for content text added
+* Font family for legend added
+* Live search improved
+* when search input is arabic text aligned right added
+
+### 6: July 1st, 2017
 * Legend capable of multiple lines added
 
-### 3: July 1st, 2017
+### 5: July 1st, 2017
 * Fancybox added
 
 ### 4: July 2nd, 2017

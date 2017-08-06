@@ -4,7 +4,7 @@
 <body @php(body_class())>
     @php(do_action('get_header'))
     @include('partials.header')
-
+	@include('partials.header_footer')
     <div class="wrap" role="document">
         <div class="content">
             <main class="main">
@@ -14,7 +14,7 @@
     </div>
 
     @php(do_action('get_footer'))
-    @include('partials.footer')
+	@include('partials.footer')
     @php(wp_footer())
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

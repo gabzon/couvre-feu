@@ -1,8 +1,9 @@
+import 'sticky-kit/dist/sticky-kit.js';
 export default {
-  init() {
-    // JavaScript to be fired on the home page
-  },
-  finalize() {
-    // JavaScript to be fired on the home page, after the init JS
-  },
+	init() {
+
+	},
+	finalize() {
+		// JavaScript to be fired on the home page, after the init JS
+	},
 };

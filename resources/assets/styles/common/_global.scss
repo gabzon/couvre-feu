@@ -41,4 +41,38 @@ iframe{
 // https://css-tricks.com/snippets/css/hide-scrollbar-in-edge-ie-1011/
 html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  -moz-overflow-style: -moz-autohiding-scrollbar;
+}
+
+.couvrefeu-text{
+    transform:rotate(90deg);
+    font-size: 28px;
+}
+
+a.side-text {
+	color:black;
+	font-size:28px;
+	transform:rotate(90deg);
+	vertical-align: baseline;
+}
+a.side-text:hover {text-decoration: none;}
+
+a.know-more{
+	color:black;
+	font-size:1.75rem;
+}
+a.know-more:hover{ text-decoration: none; }
+
+.cf-font-big{font-size:1.75rem; margin-bottom: 0;}
+.cf-font-small{font-size: 1rem; margin-bottom: 0;}
+
+.cf-white{ color:white }
+
+a.cf-event-title{
+	text-decoration: none;
+	color:white;
+}
+a.cf-event-title:hover{
+	text-decoration: none;
+	color:#8dcdff;
 }
