@@ -1,14 +1,20 @@
 .fancybox-container {
-	.fancybox-infobar__body{ background: transparent; }
-	.fancybox-button{ background: transparent !important; color: black;}
-	.fancybox-button:hover { background: transparent !important; color: white;}
+	.fancybox-infobar__body{ background: transparent; font-family: 'SuisseIntl'; font-size:1rem; }
+	.fancybox-button{ background: transparent !important; color: white; font-size: 1.75rem;}
+	.fancybox-button:hover { background: transparent !important; color: black;}
+	.fancybox-stage .fancybox-slide{
+		cursor: url('../images/croix-contour.svg'), auto;
+	}
+
+	.fancybox-button--close:after, .fancybox-button--close:before { width: 28px !important;}
+
 	.fancybox-button--left, .fancybox-button--right { color: transparent; }
 	.fancybox-navigation {
 		.fancybox-arrow {
 		    top: 15%;
 		    margin: -50px 0 0;
 		    height: 85%;
-		    width: 25%;
+		    width: 5%;
 		    padding: 0;
 		    outline: none;
 		    background: none;
@@ -19,11 +25,11 @@
 		}
 
 		.fancybox-arrow--right{
-			cursor: url('../images/arrow-right.png'), auto;
+			cursor: url('../images/fleche-droite.svg'), auto;
 			right: 10%;
 		}
 		.fancybox-arrow--left{
-			cursor: url('../images/arrow-left.png'), auto;
+			cursor: url('../images/fleche-gauche.svg'), auto;
 			left: 10%;
 		}
 	}

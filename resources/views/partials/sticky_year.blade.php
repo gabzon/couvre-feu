@@ -1,4 +1,4 @@
-<div class="sticky-top pt-5 text-left" style="z-index:1; width:100%; display:block">
+<div class="sticky-top pt-5 text-left year-{{$cpt}}" style="z-index:1; width:100%; display:block">
 	<h5 class="couvrefeu-text" style="position:absolute; right:5px; top:10px; width:30px;">{{ $year }}</h5>
 </div>
 

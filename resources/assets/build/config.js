@@ -11,7 +11,7 @@ const rootPath = (userConfig.paths && userConfig.paths.root)
 
 const config = merge({
   copy: 'images/**/*',
-  proxyUrl: 'http://localhost:3000',
+  proxyUrl: 'http://localhost:3000/couvre-feu',
   cacheBusting: '[name]_[hash]',
   paths: {
     root: rootPath,

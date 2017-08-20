@@ -3977,12 +3977,15 @@ var Popover = function ($) {
 		// JavaScript to be fired on all pages
 		//jQuery(".sticky-kit").stick_in_parent();
 
+		//https://www.w3schools.com/howto/howto_css_modals.asp
 		// Get the modal
 		var modal = document.getElementById('myModal');
 
 		// Get the button that opens the modal
 		var btn = document.getElementById("title-top");
 		var btnbm = document.getElementById("title-bottom");
+		var btnMobileFrancais = document.getElementById("footer-title-fr");
+		var btnMobileArabe = document.getElementById("footer-title-ar");
 
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("modal-close")[0];
@@ -3993,6 +3996,14 @@ var Popover = function ($) {
 		}
 
 		btnbm.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		btnMobileFrancais.onclick = function(){
+			modal.style.display = "block";
+		}
+
+		btnMobileArabe.onclick = function(){
 			modal.style.display = "block";
 		}
 
@@ -4019,18 +4030,34 @@ var Popover = function ($) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sticky_kit_dist_sticky_kit_js__ = __webpack_require__(1);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sticky_kit_dist_sticky_kit_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sticky_kit_dist_sticky_kit_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sticky_kit_dist_sticky_kit_js__);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	init: function init() {
+		$('.1900 .sticky-top').css('display','none');
+		$('.1900 .cf-article').css('vertical-align','top');
 
+		$('.know-more.francais').click(function(){
+			$('.know-more.francais').css('display','none');
+		});
+
+		$('.know-more.anglais').click(function(){
+			$('.know-more.anglais').css('display','none');
+		});
+
+		$('.know-more.arabe').click(function(){
+			$('.know-more.arabe').css('display','none');
+		});		
+		//document.getElementById("myTd").style.verticalAlign = "bottom";
+		//document.getElementsByClassName(nom)
 	},
 	finalize: function finalize() {
 		// JavaScript to be fired on the home page, after the init JS
 	},
 });
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
 /* 9 */

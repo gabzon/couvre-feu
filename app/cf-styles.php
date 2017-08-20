@@ -12,7 +12,7 @@ function display_styles($id){
 	$font_size 	= '';
 	$block	= 'display: inline-block;';
 	$border = '';
-	$bcolor = '';	
+	$bcolor = '';
 
 	/* *************************************************************************
 	** Width & Heigh Section
@@ -23,7 +23,8 @@ function display_styles($id){
 	if (get_post_meta($id,'height', true)) {
 		$height = 'max-height: ' . get_post_meta($id,'height', true)  . '; ';
 	}
-	if (get_post_meta($id,'cf_fullwidth', true) === 'true') {
+
+	if (get_field( 'cf_fullwidth', $id ) === 'true') {
 		$block = 'display: block;';
 	}
 

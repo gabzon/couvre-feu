@@ -1,6 +1,13 @@
 // Variables
 
-$brand-primary:         #27ae60;
-$brand-info: 						#00594E;
+$brand-primary:         #94e6af;
+$brand-info: 			#00594E;
+$select_color: 			#94e6af;
 
 $fa-font-path:          '~font-awesome/fonts';
+
+
+.uppercase{ text-transform: uppercase; }
+
+.cf-font-big{font-size:1.75rem; margin-bottom: 0;}
+.cf-font-small{font-size: 1rem; margin-bottom: 0;}

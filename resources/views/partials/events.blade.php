@@ -19,20 +19,19 @@ $query_fr = new WP_Query( $args_fr );
 $query_en = new WP_Query( $args_en );
 $query_ar = new WP_Query( $args_ar );
 $i=0;
-$j=0;
-$k=0;
 @endphp
 
 <div class="row">
-	<div class="col">
+	<div class="col-sm-12 col-lg-4">
 		<h3>À venir</h3>
+		<br>
 		<br>
 		@if ( $query_fr->have_posts() )
 			<div id="accordion" role="tablist" aria-multiselectable="true">
 				@while ($query_fr->have_posts())
 					@php($query_fr->the_post())
 					<div role="tab" id="heading-{{ $i }}">
-						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title" data-parent="#accordion" href="#collapse-{{ $i }}"  aria-controls="collapseOne">
+						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title" data-parent="#accordion" href="#collapse-{{ $i }}"  aria-controls="collapse-{{$i}}">
 							<h3>@php(the_title())</h3>
 							<span style="font-size:1rem;">@php(the_excerpt())</span>
 						</a>
@@ -50,15 +49,16 @@ $k=0;
 		{{-- Restore original Post Data --}}
 		@php(wp_reset_postdata())
 	</div>
-	<div class="col">
-		<h3>Comming soon</h3>
+	<div class="col-sm-12 col-lg-4">
+		<h3>Upcoming</h3>
+		<br>
 		<br>
 		@if ( $query_en->have_posts() )
 			<div id="accordion" role="tablist" aria-multiselectable="true">
 				@while ($query_en->have_posts())
 					@php($query_en->the_post())
 					<div role="tab" id="heading-{{ $i }}">
-						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title" data-parent="#accordion" href="#collapse-{{ $i }}"  aria-controls="collapseOne">
+						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title" data-parent="#accordion" href="#collapse-{{ $i }}"  aria-controls="collapse-{{$i}}">
 							<h3>@php(the_title())</h3>
 							<span style="font-size:1rem;">@php(the_excerpt())</span>
 						</a>
@@ -66,7 +66,7 @@ $k=0;
 					<div id="collapse-{{ $i }}" class="collapse cf-font-small" role="tabpanel" aria-labelledby="heading-{{ $i }}">
 						@php(the_content())
 					</div>
-					@php(++$j)
+					@php(++$i)
 					<br>
 				@endwhile
 			</div>
@@ -76,30 +76,54 @@ $k=0;
 		{{-- Restore original Post Data --}}
 		@php(wp_reset_postdata())
 	</div>
-	<div class="col">
-		<h3>Salamelecum</h3>
+	<div class="col-sm-12 col-lg-4">
+		<h3 class="text-right">قريبا</h3>
+		<br>
 		<br>
 		@if ( $query_ar->have_posts() )
 			<div id="accordion" role="tablist" aria-multiselectable="true">
 				@while ($query_ar->have_posts())
 					@php($query_ar->the_post())
-					<div role="tab" id="heading-{{ $k }}">
-						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title" data-parent="#accordion" href="#collapse-{{ $k }}"  aria-controls="collapseOne">
+					<div role="tab" id="heading-{{ $i }}">
+						<a data-toggle="collapse" class="cf-font-big cf-white cf-event-title text-right" data-parent="#accordion" href="#collapse-{{ $i }}"  aria-controls="collapse-{{$i}}">
 							<h3>@php(the_title())</h3>
 							<span style="font-size:1rem;">@php(the_excerpt())</span>
 						</a>
 					</div>
-					<div id="collapse-{{ $k }}" class="collapse cf-font-small" role="tabpanel" aria-labelledby="heading-{{ $k }}">
+					<div id="collapse-{{ $i }}" class="collapse cf-font-small text-right" role="tabpanel" aria-labelledby="heading-{{ $i }}">
 						@php(the_content())
 					</div>
-					@php(++$k)
+					@php(++$i)
 					<br>
 				@endwhile
 			</div>
 		@else
-			<h3>asdflkjasdléfkj</h3>
+			<h3 class="text-right">لا توجد أحداث</h3>
 		@endif
 		{{-- Restore original Post Data --}}
 		@php(wp_reset_postdata())
 	</div>
 </div>
+
+
+@php
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+switch ($lang){
+	case "fr":
+	//echo "PAGE FR";
+	include("index_fr.php");//include check session FR
+	break;
+	case "ar":
+	//echo "PAGE IT";
+	include("index_it.php");
+	break;
+	case "en":
+	//echo "PAGE EN";
+	include("index_en.php");
+	break;
+	default:
+	//echo "PAGE EN - Setting Default";
+	include("index_en.php");//include EN in all other cases of different lang detection
+	break;
+}
+@endphp

@@ -3,9 +3,34 @@
 Made with Sage is a WordPress starter theme with a modern development workflow.
 
 ## CHANGELOG
+### 13: August 19, 20th 2017
+* loupe: loupe when page load, disappear on focus, reappear on focusout, disappear if out of focus but there is text
+
+### 12: August 17th, 2017
+* remove scrollbar in windows firefox and Internet explorer (https://stackoverflow.com/questions/14207109/hiding-elements-in-responsive-layout)
+* diaporama arrows and close button updated
+* Event title hover color updated
+* Selection color updated
+* Comming soon to upcoming changed
+
+### 11: August 8th, 2017
+* Articles will take 95% width size when in mobile (added)
+* Footer bar with french and arabic titles and dark background for mobile version (added)
+
+### 10: August 7th, 2017
+* 1900 year sticky-top lateral bar hidden
+* Closing cross in event modal window change for an svg image
+* Vertical aligned top elements from 1900 (introduction texts)
+* Wordpress Admin bar removed when logged in
+* collapsable sections to introduction texts, fr, en, ar
+* collapsable trigger buttons (know-more) disapear when clicked
+* research field changed, loupe added and text centered, bottom line removed
+* loupe disapears and reappears if input field is focused or empty
+* display legend only when is an image, a gallery or a quote
+* fixed fullwidth block bug
 
 ### 9: August 1st, 2017
-* Width scroll bug fixed
+* Width scroll bug with dates fixed
 * Event custom post type created
 * Modal event window created
 * List of french events added

@@ -1,5 +1,28 @@
 // Footer
+
+a.footer-text{ color: white; }
 a.footer-text:hover{
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+.footer-mobile{
+	display: none;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 1030px) {
+	.footer-panel p{
+		margin-bottom:46px !important;
+	}
+	.footer-mobile{
+		display:flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background:black;
+		font-family: 'SuisseIntl' !important;
+	}
+	a.footer-text{
+		font-size: 1.2rem;
+		font-family: 'SuisseIntl' !important;
+	}
 }
