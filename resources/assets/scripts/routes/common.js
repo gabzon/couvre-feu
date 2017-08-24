@@ -1,4 +1,7 @@
 import 'sticky-kit/dist/sticky-kit.js';
+
+//import browsers from './components/browsers';
+
 export default {
 	init() {
 		// JavaScript to be fired on all pages
@@ -45,6 +48,19 @@ export default {
 				modal.style.display = "none";
 			}
 		}
+
+		// Internet Explorer 6-11
+		var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+		// Edge 20+
+		var isEdge = !isIE && !!window.StyleMedia;
+		// // Chrome 1+
+		//var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+		if (isIE || isEdge ) {
+			$('#ie-message').show();
+		}
+
 	},
 	finalize() {
 		// JavaScript to be fired on all pages, after page specific JS is fired

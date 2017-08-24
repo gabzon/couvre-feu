@@ -6,3 +6,7 @@
 	overflow-style: move;
 }
 .cf-article::-webkit-scrollbar { display: none; }
+
+.year-block:first-child .cf-article{
+	//vertical-align: top !important;
+}

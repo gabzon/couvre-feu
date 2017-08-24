@@ -2,9 +2,9 @@
 	.fancybox-infobar__body{ background: transparent; font-family: 'SuisseIntl'; font-size:1rem; }
 	.fancybox-button{ background: transparent !important; color: white; font-size: 1.75rem;}
 	.fancybox-button:hover { background: transparent !important; color: black;}
-	.fancybox-stage .fancybox-slide{
-		cursor: url('../images/croix-contour.svg'), auto;
-	}
+	// .fancybox-stage .fancybox-slide{
+	// 	cursor: url('../images/croix-contour.svg'), auto;
+	// }
 
 	.fancybox-button--close:after, .fancybox-button--close:before { width: 28px !important;}
 
@@ -14,7 +14,7 @@
 		    top: 15%;
 		    margin: -50px 0 0;
 		    height: 85%;
-		    width: 5%;
+		    width: 25%;
 		    padding: 0;
 		    outline: none;
 		    background: none;

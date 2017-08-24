@@ -17,37 +17,44 @@
 	@php($display_legend = 'cf-image')
 @endif
 
-<div data-legend="{{ $legend }}" data-arabe="{{ $legend_arabe }}" data-english="{{ $legend_english }}" class="pt-1 cf-article {{ $display_legend }}" data-label="{{ $search_tags }}" style="{{ display_styles(get_the_ID()) }} {{ $styles }}">
-	<div style="max-width:100%; max-height:100%; overflow:scroll; padding-right:20px;">
-		@if (get_post_format( $p->ID ) === 'image')
-			<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
-			@php(the_content())
-		@elseif ( get_post_format( get_the_ID() ) === 'gallery' )
-			<a href="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" data-fancybox="images-preview-{{the_ID()}}">
-				<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
-			</a>
+@if (in_category('top'))
+	@php($styles = 'vertical-align:top; overflow:hidden;')
+@endif
 
-			<div style="display: none;">
-				@if ( get_post_gallery() )
-					@php( $gallery = get_post_gallery( get_the_ID(), false ) )
-					@php( $ids = explode( ",", $gallery['ids'] ))
+<div data-legend="{{ $legend }}" data-arabe="{{ $legend_arabe }}" data-english="{{ $legend_english }}" class="mt-1 cf-article {{ $display_legend }}" data-label="{{ $search_tags }}" style="{{ display_styles(get_the_ID()) }} {{ $styles }}">
 
-					@foreach ( $ids as $id )
-						<a href="{{ wp_get_attachment_image_url($id, 'full') }}" data-fancybox="images-preview-{{ the_ID() }}">
-							<img src="{{ wp_get_attachment_image_url($id, 'full') }}" class="img-fluid" alt="Gallery image" />
-						</a>
-					@endforeach
-				@endif
-			</div>
-		@else
+	@if (get_post_format( $p->ID ) === 'image')
+		<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
+		@php(the_content())
+	@elseif ( get_post_format( get_the_ID() ) === 'gallery' )
+		<a href="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" data-fancybox="images-preview-{{the_ID()}}">
 			<img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid">
+		</a>
+
+		<div style="display: none;">
+			@if ( get_post_gallery() )
+				@php( $gallery = get_post_gallery( get_the_ID(), false ) )
+				@php( $ids = explode( ",", $gallery['ids'] ))
+
+				@foreach ( $ids as $id )
+					<a href="{{ wp_get_attachment_image_url($id, 'full') }}" data-fancybox="images-preview-{{ the_ID() }}">
+						<img src="{{ wp_get_attachment_image_url($id, 'full') }}" class="img-fluid" alt="Gallery image" />
+					</a>
+				@endforeach
+			@endif
+		</div>
+	@else
+		<div style="max-width:100%; max-height:100%; overflow:scroll; padding-right:20px;">
+			{{-- <img src="{{ get_the_post_thumbnail_url(get_the_ID(),'full') }}" alt="" class="img-fluid"> --}}
 			@php(the_content())
-		@endif
-	</div>
+		</div>
+	@endif
 </div>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
+	//$('.cf-article').jScrollPane({showArrows:true});
+
 	$('.cf-image').hover(
 		function(){
 			var title = $(this).attr("data-legend");

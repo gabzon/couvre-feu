@@ -23,6 +23,7 @@ Template Name: Front page
 	@endphp
 
 	@if ( $query->have_posts() )
+		@include('partials.error-message')
 		<div class="mt-5 articles">
 			@while ($query->have_posts())
 				@php( $query->the_post() )
@@ -50,7 +51,7 @@ Template Name: Front page
 			</div>
 			<div id="noResultId" style="position:relative; font-size:1.75rem; font-family:SuisseIntl;">
 				{{-- transform: rotate(90deg); --}}
-				<div class="bg-info" style="display:block;">
+				<div style="display:block;">
 					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; top:34%; right:10px;">Aucun document</div>
 					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; top:75%; right:10px;">No documents found</div>
 					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; bottom:-30px ;right:10px;">لا توجد وثائق</div>
@@ -83,6 +84,8 @@ Template Name: Front page
 				// get the value from text field
 				var input = $(this).val().trim().toLowerCase();
 
+				//$('.cf-article.first-result').first().removeClass('first-result');
+
 				if (arabic.test(input)) {
 					$('#search-input').css('text-align','center');
 				}else {
@@ -95,6 +98,8 @@ Template Name: Front page
 				// Non related element will be hidden after input
 				//$(".articles div.cf-article").not("[data-label*="+ input.toLowerCase() +"]").hide();
 				$(".articles div.cf-article").not("[data-label*=\""+ input +"\"]").hide();
+
+				//$(".articles div.cf-article [data-label*=\""+ input +"\"]").first().addClass('first-result');
 
 				//hide years without visible articles
 				$('.year-block').show();
@@ -129,10 +134,6 @@ Template Name: Front page
 					$('#search-input').css('background-image', 'url(' + imageUrl + ')');
 				}
 
-				$(window).click(function(){
-					alert('hello');
-				});
-
 			});
 
 			//https://www.w3schools.com/css/css3_animations.asp
@@ -146,6 +147,7 @@ Template Name: Front page
 				jQuery('.2017').addClass('last-year');
 				jQuery('body').addClass('last-year');
 				jQuery('#title-bottom').css('color',"white");
+				jQuery('.cf-article a').css('color',"white");
 				jQuery('#title-top').css('color',"white");
 				jQuery('.form-inline').css('color',"white");
 				jQuery('.sticky-top h5').css('color','white');
@@ -155,6 +157,7 @@ Template Name: Front page
 				jQuery('body').removeClass('last-year');
 				jQuery('#title-bottom').css('color',"black");
 				jQuery('#title-top').css('color',"black");
+				jQuery('.cf-article a').css('color',"black");
 				jQuery('.form-inline').css('color',"black");
 				jQuery('.sticky-top h5').css('color','black');
 				jQuery('input#search-input').removeClass('change-color');

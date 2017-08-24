@@ -14495,10 +14495,6 @@ a.cf-event-title:hover {
   color: black;
 }
 
-.fancybox-container .fancybox-stage .fancybox-slide {
-  cursor: url(../images/croix-contour.svg), auto;
-}
-
 .fancybox-container .fancybox-button--close:after,
 .fancybox-container .fancybox-button--close:before {
   width: 28px !important;
@@ -14513,7 +14509,7 @@ a.cf-event-title:hover {
   top: 15%;
   margin: -50px 0 0;
   height: 85%;
-  width: 5%;
+  width: 25%;
   padding: 0;
   outline: none;
   background: none;
@@ -14625,6 +14621,111 @@ a.cf-event-title:hover {
   display: none;
 }
 
+#noResultId {
+  display: none;
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane {
+  position: absolute;
+}
+
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+
+.jspCap {
+  display: none;
+}
+
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+
+.jspTrack {
+  background: #dde;
+  position: relative;
+}
+
+.jspDrag {
+  background: #bbd;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
 input#search-input {
   border: 0px;
   border-bottom: 0px solid transparent;
@@ -14671,6 +14772,12 @@ input#search-input::placeholder {
 
 #search-input.change-color::placeholder {
   color: white;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 1030px) {
+  input#search-input {
+    border: 1px solid red;
+  }
 }
 
 a.footer-text {
@@ -14723,13 +14830,13 @@ a.footer-text:hover {
     margin: 0 !important;
     margin-top: 0 !important;
     margin-right: 0 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 75px !important;
     margin-left: 0 !important;
     padding-top: 0 !important;
     padding-right: 0 !important;
     padding-bottom: 0 !important;
     padding-left: 3% !important;
-    font-size: 24px !important;
+    font-size: 1.2rem !important;
     font-family: 'SuisseIntl' !important;
   }
 

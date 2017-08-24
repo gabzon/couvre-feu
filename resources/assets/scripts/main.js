@@ -1,8 +1,15 @@
+//http://noraesae.github.io/perfect-scrollbar/
+
+
 /** import external dependencies */
 import 'jquery';
 import 'bootstrap';
 import 'fancybox/dist/js/jquery.fancybox.js';
 import 'sticky-kit/dist/sticky-kit.js';
+//import 'perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js';
+import 'jscrollpane/script/jquery.mousewheel.js';
+import 'jscrollpane/script/jquery.jscrollpane.js';
+
 
 /** import local dependencies */
 import Router from './util/Router';
