@@ -24,7 +24,7 @@ Template Name: Front page
 
 	@if ( $query->have_posts() )
 		@include('partials.error-message')
-		<div class="mt-5 articles">
+		 <div class="articles"> {{-- the class mt-5 was used before --}}
 			@while ($query->have_posts())
 				@php( $query->the_post() )
 				@php( $year = get_post_meta(get_the_ID(),'article_year', true ) )
@@ -32,13 +32,13 @@ Template Name: Front page
 				@if ( $current_year < $year )
 					{{-- display:flex; flex-wrap:wrap; align-items: center; --}}
 					@if ($year_block_state === 'start')
-						<div class="year-block mt-4 {{$year}}" style="display:block;">
+						<div class="year-block mt-3 {{$year}}" style="display:block;">
 							@include( 'partials.sticky_year' )
 							@include('partials.article')
 							@php( $year_block_state = 'inside' )
 						@else
 						</div>
-						<div class="year-block mt-4 {{$year}}" style="display:block;">
+						<div class="year-block mt-3 {{$year}}" style="display:block;">
 							@include( 'partials.sticky_year' )
 							@include('partials.article')
 						@endif
