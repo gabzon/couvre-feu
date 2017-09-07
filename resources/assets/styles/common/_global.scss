@@ -81,7 +81,11 @@ a.side-text {
 	//mix-blend-mode:  difference;
 }
 
-a.side-text:hover {text-decoration: none; mix-blend-mode: exclusion;}
+a.side-text:hover {
+	text-decoration: none;
+	//mix-blend-mode: exclusion;
+	color: $select_color;
+}
 
 a.know-more{ color:black; }
 a.know-more:hover{ text-decoration: none; color:black;}

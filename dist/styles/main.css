@@ -14432,7 +14432,7 @@ a.side-text {
 
 a.side-text:hover {
   text-decoration: none;
-  mix-blend-mode: exclusion;
+  color: #94e6af;
 }
 
 a.know-more {
@@ -14530,6 +14530,12 @@ a.cf-event-title:hover {
   left: 10%;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 1030px) {
+  .fancybox-container .fancybox-navigation .fancybox-arrow {
+    width: 15%;
+  }
+}
+
 /* The Modal (background) */
 
 .modal {
@@ -14577,6 +14583,21 @@ a.cf-event-title:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-header {
+  border: 0;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
+
+.modal-content {
+  color: white;
+  background-color: transparent;
+  font-size: 1rem;
+  border: 0;
 }
 
 .alignnone {
@@ -14727,6 +14748,7 @@ a.cf-event-title:hover {
 }
 
 input#search-input {
+  width: 100%;
   border: 0px;
   border-bottom: 0px solid transparent;
   background-color: transparent;
@@ -14775,8 +14797,9 @@ input#search-input::placeholder {
 }
 
 @media only screen and (min-width: 120px) and (max-width: 1030px) {
-  input#search-input {
-    border: 1px solid red;
+  .form-inline,
+  .search-form {
+    text-align: center;
   }
 }
 
@@ -14823,7 +14846,26 @@ a.footer-text:hover {
   display: none;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1030px) {
+#noResultId {
+  font-size: 1.75rem;
+}
+
+#noResultId #no-fr {
+  top: 680px;
+  right: 5px;
+}
+
+#noResultId #no-en {
+  top: 65%;
+  right: 5px;
+}
+
+#noResultId #no-ar {
+  bottom: -30px;
+  right: 5px;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 1030px) {
   .cf-article[style] {
     width: 95%;
     max-width: 95% !important;
@@ -14843,6 +14885,26 @@ a.footer-text:hover {
   .side-text {
     display: none;
     font-family: 'SuisseIntl' !important;
+  }
+
+  #noResultId {
+    font-size: 1.2rem;
+  }
+
+  #noResultId #no-fr {
+    top: 480px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #noResultId {
+    font-size: 1.2rem;
+  }
+
+  #noResultId #no-fr {
+    top: 480px;
+    right: 5px;
+    width: 470px;
   }
 }
 

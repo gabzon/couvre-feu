@@ -6,6 +6,7 @@
 }
 
 input#search-input{
+	width:100%;
     border:0px;
     border-bottom: 0px solid transparent;
 	background-color:transparent;
@@ -24,6 +25,7 @@ input#search-input:focus{
 input#search-input:not([value=""]):not(:focus) {
   background-image: none;
 }
+
 input#search-input:not(:focus) {
   background-image: url(images/loupe.svg);
 }
@@ -36,10 +38,8 @@ input#search-input::placeholder{
 	color:white;
 };
 
-
-
 @media only screen and (min-width : 120px) and (max-width : 1030px) {
-	input#search-input{
-		border:1px solid red;
+	.form-inline{
+		text-align: center;
 	}
 }

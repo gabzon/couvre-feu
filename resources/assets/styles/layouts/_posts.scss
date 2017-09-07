@@ -4,8 +4,15 @@
 
 #search-msg .not-found{ display: none; }
 
+#noResultId{
+	font-size:1.75rem;
+	#no-fr{ top:680px; right:5px; }
+	// #no-fr{ top:230px; right:5px; }
+	#no-en{ top:65%; right: 5px; }
+	#no-ar{ bottom:-30px; right:5px; }
+}
 
-@media only screen and (min-width : 320px) and (max-width : 1030px) {
+@media only screen and (min-width : 120px) and (max-width : 1030px) {
 	.cf-article[style]{
 		width: 95%;
 		max-width: 95% !important;
@@ -27,5 +34,17 @@
 	.side-text{
 		display:none;
 		font-family: 'SuisseIntl' !important;
+	}
+
+	#noResultId{
+		font-size:1.2rem;
+		#no-fr{ top:480px;}
+	}
+}
+
+@media only screen and (max-width : 400px) {
+	#noResultId{
+		font-size:1.2rem;
+		#no-fr{ top:480px; right:5px; width: 470px;}
 	}
 }

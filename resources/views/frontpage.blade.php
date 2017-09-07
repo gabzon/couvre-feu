@@ -49,12 +49,16 @@ Template Name: Front page
 					@php(++$cpt)
 				@endwhile
 			</div>
-			<div id="noResultId" style="position:relative; font-size:1.75rem; font-family:SuisseIntl;">
+			<div id="noResultId" style="position:relative; font-family:SuisseIntl;">
 				{{-- transform: rotate(90deg); --}}
 				<div style="display:block;">
-					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; top:34%; right:10px;">Aucun document</div>
-					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; top:75%; right:10px;">No documents found</div>
-					<div style="position: fixed; transform: rotate(90deg); transform-origin:right top; bottom:-30px ;right:10px;">لا توجد وثائق</div>
+					<div id="no-fr" style="position: fixed; transform: rotate(90deg); transform-origin:right top;">
+					Aucun document &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					No documents &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					لا توجد وثائق</div>
+					{{-- <div id="no-fr" style="position: fixed; transform: rotate(90deg); transform-origin:right top;">Aucun document</div>
+					<div id="no-en" style="position: fixed; transform: rotate(90deg); transform-origin:right top;">No documents</div>
+					<div id="no-ar" style="position: fixed; transform: rotate(90deg); transform-origin:right top;">لا توجد وثائق</div> --}}
 				</div>
 			</div>
 			@php(wp_reset_postdata())

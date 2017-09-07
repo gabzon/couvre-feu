@@ -11,16 +11,16 @@
 	.fancybox-button--left, .fancybox-button--right { color: transparent; }
 	.fancybox-navigation {
 		.fancybox-arrow {
-		    top: 15%;
-		    margin: -50px 0 0;
-		    height: 85%;
-		    width: 25%;
-		    padding: 0;
-		    outline: none;
-		    background: none;
-		    z-index: 99995;
-		    opacity: 0;
-		    transition: opacity .25s;
+			top: 15%;
+			margin: -50px 0 0;
+			height: 85%;
+			width: 25%;
+			padding: 0;
+			outline: none;
+			background: none;
+			z-index: 99995;
+			opacity: 0;
+			transition: opacity .25s;
 			//outline: 1px solid red;
 		}
 
@@ -31,6 +31,17 @@
 		.fancybox-arrow--left{
 			cursor: url('../images/fleche-gauche.svg'), auto;
 			left: 10%;
+		}
+	}
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 1030px) {
+	.fancybox-container {
+		.fancybox-navigation {
+			.fancybox-arrow {
+				width: 15%;
+			}
 		}
 	}
 }

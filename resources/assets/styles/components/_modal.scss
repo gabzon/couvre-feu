@@ -37,3 +37,20 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+// Mobile
+.modal-header{
+	border:0;
+}
+.modal-backdrop{
+	z-index:0;
+}
+
+.modal-content {
+    color: white;
+	//background-color: rgba(255, 255, 255, 0.7);
+	background-color: transparent;
+	font-size: 1rem;
+	border: 0;
+}
